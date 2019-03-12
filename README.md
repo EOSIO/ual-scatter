@@ -13,17 +13,17 @@ This authenticator is meant to be used with [Scatter](https://get-scatter.com/) 
 
 You must use one of the UAL renderers below.
 
-React - `@blockone/universal-authenticator-library-react`
+React - `@blockone/universal-authenticator-library-reactjs-renderer`
 
 
-Vanillajs - `@blockone/universal-authenticator-library-js`
+Vanillajs - `@blockone/universal-authenticator-library-plain-js-renderer`
 
 
 #### Basic Usage with React
 
 ```javascript
 import { Scatter } from '@blockone/ual-scatter'
-import { UALProvider, withUAL } from '@blockone/universal-authenticator-library-react'
+import { UALProvider, withUAL } from '@blockone/universal-authenticator-library-reactjs-renderer'
 
 const exampleNet = {
   chainId: '',
