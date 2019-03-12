@@ -13,10 +13,10 @@ This authenticator is meant to be used with [Scatter](https://get-scatter.com/) 
 
 You must use one of the UAL renderers below.
 
-React - `@blockone/universal-authenticator-library-reactjs-renderer`
+React - `@blockone/universal-authenticator-library-react-js-renderer`
 
 
-Vanillajs - `@blockone/universal-authenticator-library-plain-js-renderer`
+PlainJS - `@blockone/universal-authenticator-library-plain-js-renderer`
 
 
 #### Basic Usage with React
