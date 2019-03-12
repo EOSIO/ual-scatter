@@ -16,7 +16,7 @@ You must use one of the UAL renderers below.
 React - `@blockone/universal-authenticator-library-reactjs-renderer`
 
 
-Vanillajs - `@blockone/universal-authenticator-library-plain-js-renderer`
+PlainJS - `@blockone/universal-authenticator-library-plain-js-renderer`
 
 
 #### Basic Usage with React
