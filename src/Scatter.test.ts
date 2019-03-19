@@ -4,6 +4,8 @@ import { Name } from './interfaces'
 import { Scatter } from './Scatter'
 import { UALScatterError } from './UALScatterError'
 
+declare var window: any
+
 jest.mock('scatterjs-core')
 
 const endpoint: RpcEndpoint = {
@@ -23,6 +25,16 @@ const account: any = {
   publicKey: 'EOS11111',
   name: 'test.account',
 }
+
+//Make userAgent mutable for testing
+Object.defineProperty(window.navigator, 'userAgent', ((_value) => {
+  return {
+    get: () => _value,
+    set: (v) => {
+        _value = v;
+    }
+  };
+})(window.navigator.userAgent))
 
 describe('Scatter', () => {
   let api: any
@@ -50,6 +62,15 @@ describe('Scatter', () => {
 
       const scatterAuth = new Scatter(chains, {appName: 'testdapp'})
       scatterAuth.isMobile = () => true
+
+      expect(scatterAuth.shouldRender()).toBe(false)
+    })
+
+    it('returns false if it is within an embedded browser', () => {
+      ScatterJS.scatter = scatter
+      
+      window.navigator.userAgent = 'EOSLynx Ios'
+      const scatterAuth = new Scatter(chains, {appName: 'testdapp'})
 
       expect(scatterAuth.shouldRender()).toBe(false)
     })
