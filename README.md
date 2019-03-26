@@ -1,4 +1,4 @@
-# UAL Scatter Authenticator
+# UAL for Scatter Authenticator ![EOSIO Alpha](https://img.shields.io/badge/EOSIO-Alpha-blue.svg)
 
 This authenticator is meant to be used with [Scatter](https://get-scatter.com/) and [Universal Authenticator Library](https://github.com/EOSIO/universal-authenticator-library). When used in combination with them, it gives developers the ability to request transaction signatures through Scatter using the common UAL API.
 
@@ -7,23 +7,23 @@ This authenticator is meant to be used with [Scatter](https://get-scatter.com/) 
 
 ## Getting Started
 
-`yarn add @blockone/ual-scatter`
+`yarn add ual-scatter`
 
 #### Dependencies
 
 You must use one of the UAL renderers below.
 
-React - `@blockone/universal-authenticator-library-react-js-renderer`
+React - `ual-reactjs-renderer`
 
 
-PlainJS - `@blockone/universal-authenticator-library-plain-js-renderer`
+PlainJS - `ual-plainjs-renderer`
 
 
 #### Basic Usage with React
 
 ```javascript
-import { Scatter } from '@blockone/ual-scatter'
-import { UALProvider, withUAL } from '@blockone/universal-authenticator-library-reactjs-renderer'
+import { Scatter } from 'ual-scatter'
+import { UALProvider, withUAL } from 'ual-reactjs-renderer'
 
 const exampleNet = {
   chainId: '',
@@ -53,3 +53,7 @@ const scatter = new Scatter([exampleNet], { appName: 'Example App' })
 ## License
 
 [MIT](https://github.com/EOSIO/ual-scatter/blob/develop/LICENSE)
+
+## Important
+
+See LICENSE for copyright and license terms.  Block.one makes its contribution on a voluntary basis as a member of the EOSIO community and is not responsible for ensuring the overall performance of the software or any related applications.  We make no representation, warranty, guarantee or undertaking in respect of the software or any related documentation, whether expressed or implied, including but not limited to the warranties or merchantability, fitness for a particular purpose and noninfringement. In no event shall we be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or documentation or the use or other dealings in the software or documentation.  Any test results or performance figures are indicative and will not reflect performance under all conditions.  Any reference to any third party or third-party product, service or other resource is not an endorsement or recommendation by Block.one.  We are not responsible, and disclaim any and all responsibility and liability, for your use of or reliance on any of these resources. Third-party resources may be updated, changed or terminated at any time, so the information here may be out of date or inaccurate.

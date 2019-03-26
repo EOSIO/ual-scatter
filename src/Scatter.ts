@@ -143,8 +143,9 @@ export class Scatter extends Authenticator {
     const isIOS = userAgent.includes('iPhone') || userAgent.includes('iPad')
     const isMobile = userAgent.includes('Mobile')
     const isAndroid = userAgent.includes('Android')
+    const isCustom = userAgent.toLowerCase().includes('eoslynx')
 
-    return isIOS || isMobile || isAndroid
+    return isIOS || isMobile || isAndroid || isCustom
   }
 
   public getOnboardingLink(): string {
