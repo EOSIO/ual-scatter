@@ -7,23 +7,23 @@ This authenticator is meant to be used with [Scatter](https://get-scatter.com/) 
 
 ## Getting Started
 
-`yarn add @blockone/ual-scatter`
+`yarn add ual-scatter`
 
 #### Dependencies
 
 You must use one of the UAL renderers below.
 
-React - `@blockone/ual-reactjs-renderer`
+React - `ual-reactjs-renderer`
 
 
-PlainJS - `@blockone/ual-plainjs-renderer`
+PlainJS - `ual-plainjs-renderer`
 
 
 #### Basic Usage with React
 
 ```javascript
-import { Scatter } from '@blockone/ual-scatter'
-import { UALProvider, withUAL } from '@blockone/ual-reactjs-renderer'
+import { Scatter } from 'ual-scatter'
+import { UALProvider, withUAL } from 'ual-reactjs-renderer'
 
 const exampleNet = {
   chainId: '',
