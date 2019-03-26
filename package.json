@@ -1,6 +1,6 @@
 {
-  "name": "@blockone/ual-scatter",
-  "version": "0.0.26",
+  "name": "ual-scatter",
+  "version": "0.0.27",
   "main": "dist/index.js",
   "license": "MIT",
   "author": {
