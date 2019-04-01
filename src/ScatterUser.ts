@@ -1,6 +1,6 @@
-import { Chain, SignTransactionResponse, UALErrorType, User } from '@blockone/universal-authenticator-library'
 import { Api, JsonRpc } from 'eosjs'
 import * as ecc from 'eosjs-ecc'
+import { Chain, SignTransactionResponse, UALErrorType, User } from 'universal-authenticator-library'
 import { UALScatterError } from './UALScatterError'
 
 export class ScatterUser extends User {

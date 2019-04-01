@@ -1,9 +1,9 @@
+import ScatterJS from 'scatterjs-core'
+import ScatterEOS from 'scatterjs-plugin-eosjs2'
 import {
   Authenticator, ButtonStyle, Chain,
   UALError, UALErrorType, User
-} from '@blockone/universal-authenticator-library'
-import ScatterJS from 'scatterjs-core'
-import ScatterEOS from 'scatterjs-plugin-eosjs2'
+} from 'universal-authenticator-library'
 import { Name } from './interfaces'
 import { scatterLogo } from './scatterLogo'
 import { ScatterUser } from './ScatterUser'
