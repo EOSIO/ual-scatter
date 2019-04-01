@@ -20,7 +20,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@blockone/universal-authenticator-library": "0.0.34",
+    "universal-authenticator-library": "0.1.0",
     "eosjs": "20.0.0-beta2",
     "eosjs-ecc": "4.0.4",
     "scatterjs-core": "2.5.0",
@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@babel/runtime": "^7.2.0",
-    "@blockone/tslint-config-blockone": "^1.0.0",
+    "@blockone/tslint-config-blockone": "^3.0.0",
     "@types/jest": "^23.3.10",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.5",
