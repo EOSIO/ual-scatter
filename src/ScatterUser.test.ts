@@ -1,4 +1,4 @@
-import { Chain, RpcEndpoint, UALError, UALErrorType } from '@blockone/universal-authenticator-library'
+import { Chain, RpcEndpoint, UALError, UALErrorType } from 'universal-authenticator-library'
 import { ScatterUser } from './ScatterUser'
 
 const endpoint: RpcEndpoint = {
