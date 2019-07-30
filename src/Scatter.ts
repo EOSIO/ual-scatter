@@ -46,9 +46,9 @@ export class Scatter extends Authenticator {
     // set an errored state if scatter doesn't connect
     if (!await ScatterJS.scatter.connect(this.appName)) {
       this.initError = new UALScatterError('Error occurred while connecting',
-          UALErrorType.Initialization,
-          null
-        )
+        UALErrorType.Initialization,
+        null
+      )
 
       this.scatterIsLoading = false
 
@@ -84,7 +84,7 @@ export class Scatter extends Authenticator {
       icon: scatterLogo,
       text: Name,
       textColor: 'white',
-      background: '#62D0FD'
+      background: '#078CE9'
     }
   }
 
@@ -103,6 +103,8 @@ export class Scatter extends Authenticator {
   }
 
   public async login(_?: string): Promise<User[]> {
+    this.users = []
+
     try {
       for (const chain of this.chains) {
         const user = new ScatterUser(chain, this.scatter)
