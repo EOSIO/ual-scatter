@@ -84,7 +84,7 @@ export class Scatter extends Authenticator {
       icon: scatterLogo,
       text: Name,
       textColor: 'white',
-      background: '#62D0FD'
+      background: '#078CE9'
     }
   }
 
