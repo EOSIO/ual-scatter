@@ -3705,10 +3705,10 @@ union-value@^1.0.0:
     is-extendable "^0.1.1"
     set-value "^0.4.3"
 
-universal-authenticator-library@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/universal-authenticator-library/-/universal-authenticator-library-0.1.0.tgz#187e6a85f43e75d4d76b66c228c9e4b59770d4af"
-  integrity sha512-45nl80BWf+9WA8vTMXunMicZmHPm4wWdxNnSlL65cCP4OjA1ra4IuH+T7+Ko3P6IfXSfS9+VNCuXai3fip+taA==
+universal-authenticator-library@0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/universal-authenticator-library/-/universal-authenticator-library-0.1.2.tgz#bc1afa61a1f61837f48bfbd7efa08183a2136b97"
+  integrity sha512-vtvw+wfwGcdfRRT/Bzr+f5YZnhaWVf+U1nSmDonGsxXThLU07ec8zPorXd15v7x9t9mMYbs985ZScYVohHB/9w==
 
 unset-value@^1.0.0:
   version "1.0.0"
