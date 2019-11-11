@@ -307,6 +307,37 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@scatterjs/core@2.7.46":
+  version "2.7.46"
+  resolved "https://registry.yarnpkg.com/@scatterjs/core/-/core-2.7.46.tgz#ceea593725b1fc2579bb56639784edfd9247c5f8"
+  integrity sha512-eIL3DYll20i8By9jrxBpoGPJetr38l43a25tIUVTta5Pmif6vaqbSwT3WnjZEWXgBoqyus8pE4uyFA8VQQK3Tg==
+  dependencies:
+    create-hash "^1.2.0"
+    device-uuid "^1.0.4"
+    es6-promise "^4.2.4"
+    get-random-values "^1.2.0"
+    isomorphic-ws "^4.0.1"
+    ws "^6.1.0"
+
+"@scatterjs/core@^2.7.47":
+  version "2.7.47"
+  resolved "https://registry.yarnpkg.com/@scatterjs/core/-/core-2.7.47.tgz#ea86a7c72039f03fef956ecd05bb8eb4774c6f2a"
+  integrity sha512-txPYHTvOXL5mBgnxZksGcmzMwkXQ8+qxkmw6orGwi8yfs6xnLdEHN2fGfczdRR+uetj9PYArEBmLs2KlNACV5Q==
+  dependencies:
+    create-hash "^1.2.0"
+    device-uuid "^1.0.4"
+    es6-promise "^4.2.4"
+    get-random-values "^1.2.0"
+    isomorphic-ws "^4.0.1"
+    ws "^6.1.0"
+
+"@scatterjs/eosjs2@^1.5.29":
+  version "1.5.29"
+  resolved "https://registry.yarnpkg.com/@scatterjs/eosjs2/-/eosjs2-1.5.29.tgz#2e66f37f00b793c297849f5c4abdccc7d2145948"
+  integrity sha512-UJAeazjIUhYf8a8+A57BGoLZzmkpHHXnTSOOuRqs0/hZB8gaJO4E6x0wb/Z/Fs2usN6Mh3ijrYAHwn+27ZyFWA==
+  dependencies:
+    "@scatterjs/core" "^2.7.47"
+
 "@sellside/emitter@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@sellside/emitter/-/emitter-1.2.1.tgz#0dd839c30cdf01087f4dc63613503da6bcdf5f1e"
@@ -1055,6 +1086,11 @@ detect-newline@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-2.1.0.tgz#f41f1c10be4b00e87b5f13da680759f2c5bfd3e2"
   integrity sha1-9B8cEL5LAOh7XxPaaAdZ8sW/0+I=
+
+device-uuid@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/device-uuid/-/device-uuid-1.0.4.tgz#f6973e58f19b92a237aeca7b16a395ae7195a883"
+  integrity sha1-9pc+WPGbkqI3rsp7FqOVrnGVqIM=
 
 diff-sequences@^24.9.0:
   version "24.9.0"
@@ -3209,22 +3245,6 @@ sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
-
-scatterjs-core@2.7.17:
-  version "2.7.17"
-  resolved "https://registry.yarnpkg.com/scatterjs-core/-/scatterjs-core-2.7.17.tgz#f889e9d3bf1ba2003fc0411ad838fbfe42ed11fb"
-  integrity sha512-LKvg7nr2ViZgNyw7dzk5CbwDVz006PBFpJqKU1dx7fmMs9LmBov7gB60DFwLR9p3kirPWO2hon1TE/xe51pkFw==
-  dependencies:
-    create-hash "^1.2.0"
-    es6-promise "^4.2.4"
-    get-random-values "^1.2.0"
-    isomorphic-ws "^4.0.1"
-    ws "^6.1.0"
-
-scatterjs-plugin-eosjs2@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/scatterjs-plugin-eosjs2/-/scatterjs-plugin-eosjs2-1.5.0.tgz#4e8e08859c82af7b9c0b275ea57c9739a373cc18"
-  integrity sha512-RIYGW+c4dH//jwcAflcnI2N+erzy2AHQwfqMr8CTMCRg2S8Drm/PWf/iDn1JHsjbyTv1+kIP335zWz7xP92iAQ==
 
 "semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5, semver@^5.5.0, semver@^5.6.0:
   version "5.7.1"

@@ -21,10 +21,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@scatterjs/core": "2.7.46",
+    "@scatterjs/eosjs2": "^1.5.29",
     "eosjs": "20.0.0",
     "eosjs-ecc": "4.0.4",
-    "scatterjs-core": "2.7.17",
-    "scatterjs-plugin-eosjs2": "^1.5.0",
     "universal-authenticator-library": "0.1.4"
   },
   "resolutions": {
