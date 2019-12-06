@@ -21,8 +21,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "eosjs": "20.0.0",
-    "eosjs-ecc": "4.0.4",
+    "@types/elliptic": "^6.4.10",
+    "elliptic": "^6.5.0",
+    "eosjs": "20.0.4-67ee21f.0",
     "scatterjs-core": "2.7.17",
     "scatterjs-plugin-eosjs2": "^1.5.0",
     "universal-authenticator-library": "0.1.4"
