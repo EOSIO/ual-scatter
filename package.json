@@ -57,7 +57,7 @@
     "@types/elliptic": "^6.4.10",
     "@types/jest": "^24.0.15",
     "@types/node": "^12.12.20",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
     "ts-jest": "^24.0.2",
     "tslint": "^5.11.0",
     "typescript": "^3.2.2"
