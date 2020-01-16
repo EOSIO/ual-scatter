@@ -29,7 +29,7 @@ export class ScatterUser extends User {
       port: rpcEndpoint.port,
     }
     const rpc = this.rpc
-    this.api = this.scatter.eos(network, Api, { rpc, beta3: true })
+    this.api = this.scatter.eos(network, Api, { rpc })
   }
 
   public async signTransaction(
