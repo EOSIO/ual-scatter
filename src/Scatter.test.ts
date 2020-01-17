@@ -1,12 +1,12 @@
 import { Chain, RpcEndpoint, UALErrorType } from 'universal-authenticator-library'
-import ScatterJS from 'scatterjs-core'
+import ScatterJS from '@scatterjs/core'
 import { Name } from './interfaces'
 import { Scatter } from './Scatter'
 import { UALScatterError } from './UALScatterError'
 
 declare var window: any
 
-jest.mock('scatterjs-core')
+jest.mock('@scatterjs/core')
 
 const endpoint: RpcEndpoint = {
   protocol: 'https',

@@ -1,6 +1,6 @@
 {
   "name": "ual-scatter",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "main": "dist/index.js",
   "license": "MIT",
   "author": {
@@ -21,10 +21,10 @@
     "test": "jest"
   },
   "dependencies": {
-    "eosjs": "20.0.0",
-    "eosjs-ecc": "4.0.4",
-    "scatterjs-core": "2.7.17",
-    "scatterjs-plugin-eosjs2": "^1.5.0",
+    "@scatterjs/core": "2.7.51",
+    "@scatterjs/eosjs2": "1.5.33",
+    "elliptic": "6.5.2",
+    "eosjs": "21.0.1-rc1",
     "universal-authenticator-library": "0.1.4"
   },
   "resolutions": {
@@ -54,8 +54,10 @@
   "devDependencies": {
     "@babel/runtime": "^7.2.0",
     "@blockone/tslint-config-blockone": "^3.0.0",
+    "@types/elliptic": "^6.4.10",
     "@types/jest": "^24.0.15",
-    "jest": "^24.8.0",
+    "@types/node": "^12.12.20",
+    "jest": "^24.9.0",
     "ts-jest": "^24.0.2",
     "tslint": "^5.11.0",
     "typescript": "^3.2.2"

@@ -1,7 +1,11 @@
-import { Api, JsonRpc } from 'eosjs'
-import * as ecc from 'eosjs-ecc'
+import { Api, JsonRpc, Numeric } from 'eosjs'
+import { ec as EC } from 'elliptic'
+import { Signature, PublicKey } from 'eosjs/dist/eosjs-jssig'
 import { Chain, SignTransactionResponse, UALErrorType, User } from 'universal-authenticator-library'
 import { UALScatterError } from './UALScatterError'
+
+const { KeyType } = Numeric
+const ec = new EC('secp256k1')
 
 export class ScatterUser extends User {
   private api: Api
@@ -11,8 +15,8 @@ export class ScatterUser extends User {
   private accountName: string = ''
 
   constructor(
-    private chain: Chain,
-    private scatter: any,
+      private chain: Chain,
+      private scatter: any,
   ) {
     super()
     const rpcEndpoint = this.chain.rpcEndpoints[0]
@@ -26,25 +30,25 @@ export class ScatterUser extends User {
       port: rpcEndpoint.port,
     }
     const rpc = this.rpc
-    this.api = this.scatter.eos(network, Api, { rpc, beta3: true })
+    this.api = this.scatter.eos(network, Api, { rpc })
   }
 
   public async signTransaction(
-    transaction: any,
-    { broadcast = true, blocksBehind = 3, expireSeconds = 30 }
+      transaction: any,
+      { broadcast = true, blocksBehind = 3, expireSeconds = 30 }
   ): Promise<SignTransactionResponse> {
     try {
       const completedTransaction = await this.api.transact(
-        transaction,
-        { broadcast, blocksBehind, expireSeconds }
+          transaction,
+          { broadcast, blocksBehind, expireSeconds }
       )
 
       return this.returnEosjsTransaction(broadcast, completedTransaction)
     } catch (e) {
       throw new UALScatterError(
-        'Unable to sign the given transaction',
-        UALErrorType.Signing,
-        e)
+          'Unable to sign the given transaction',
+          UALErrorType.Signing,
+          e)
     }
   }
 
@@ -54,16 +58,7 @@ export class ScatterUser extends User {
         reject(new Error('verifyKeyOwnership failed'))
       }, 1000)
 
-      this.scatter.authenticate(challenge).then(async (signature) => {
-        const pubKey = ecc.recover(signature, challenge)
-        const myKeys = await this.getKeys()
-        for (const key of myKeys) {
-          if (key === pubKey) {
-            resolve(true)
-          }
-        }
-        resolve(false)
-      })
+      this.authenticate(challenge, resolve)
     })
   }
 
@@ -107,9 +102,37 @@ export class ScatterUser extends User {
       this.accountName = identity.accounts[0].name
     } catch (e) {
       throw new UALScatterError(
-        'Unable load user\'s identity',
-        UALErrorType.DataRequest,
-        e)
+          'Unable load user\'s identity',
+          UALErrorType.DataRequest,
+          e)
     }
+  }
+
+  private authenticate(challenge: string, resolve): void {
+    this.scatter.authenticate(challenge).then(async (signature) => {
+      const publicKey = this.getPublicKey(challenge, signature)
+      const myKeys = await this.getKeys()
+      let resolvedValue = false
+      for (const key of myKeys) {
+        if (key === publicKey) {
+          resolvedValue = true
+        }
+      }
+      resolve(resolvedValue)
+    })
+  }
+
+  private getPublicKey(challenge: string, signature: string): string {
+    const ellipticSignature = Signature.fromString(signature).toElliptic()
+    const ellipticHashedStringAsBuffer = Buffer.from(ec.hash().update(challenge).digest(), 'hex')
+    const ellipticRecoveredPublicKey =
+      ec.recoverPubKey(
+        ellipticHashedStringAsBuffer,
+        ellipticSignature,
+        ellipticSignature.recoveryParam,
+        'hex'
+      )
+    const ellipticPublicKey = ec.keyFromPublic(ellipticRecoveredPublicKey)
+    return PublicKey.fromElliptic(ellipticPublicKey, KeyType.k1).toString()
   }
 }
