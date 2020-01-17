@@ -4,6 +4,8 @@ import { ScatterUser } from './ScatterUser'
 import { Signature, PrivateKey } from 'eosjs/dist/eosjs-jssig'
 import { Numeric } from 'eosjs'
 
+const { KeyType } = Numeric
+
 const endpoint: RpcEndpoint = {
   protocol: 'https',
   host: 'example.com',
@@ -134,7 +136,7 @@ describe('ScatterUser', () => {
       const ellipticHashedString = ec.hash().update(dataAsString).digest()
 
       const ellipticSig = KPrivElliptic.sign(ellipticHashedString)
-      const ellipticSigString = Signature.fromElliptic(ellipticSig, Numeric.KeyType.k1).toString()
+      const ellipticSigString = Signature.fromElliptic(ellipticSig, KeyType.k1).toString()
 
       const eosioPubKey = user.getPublicKey(dataAsString, ellipticSigString)
       expect(eosioPubKey.toString()).toEqual(publicKeys[0])
@@ -149,7 +151,7 @@ describe('ScatterUser', () => {
       const ellipticHashedString = ec.hash().update(dataAsString).digest()
 
       const ellipticSig = KPrivElliptic.sign(ellipticHashedString)
-      const ellipticSigString = Signature.fromElliptic(ellipticSig, Numeric.KeyType.k1).toString()
+      const ellipticSigString = Signature.fromElliptic(ellipticSig, KeyType.k1).toString()
 
       const eosioPubKey = user.getPublicKey('other string', ellipticSigString)
       expect(eosioPubKey.toString()).not.toEqual(publicKeys[0])

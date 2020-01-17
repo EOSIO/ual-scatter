@@ -4,6 +4,7 @@ import { Signature, PublicKey } from 'eosjs/dist/eosjs-jssig'
 import { Chain, SignTransactionResponse, UALErrorType, User } from 'universal-authenticator-library'
 import { UALScatterError } from './UALScatterError'
 
+const { KeyType } = Numeric
 const ec = new EC('secp256k1')
 
 export class ScatterUser extends User {
@@ -132,6 +133,6 @@ export class ScatterUser extends User {
         'hex'
       )
     const ellipticPublicKey = ec.keyFromPublic(ellipticRecoveredPublicKey)
-    return PublicKey.fromElliptic(ellipticPublicKey, Numeric.KeyType.k1).toString()
+    return PublicKey.fromElliptic(ellipticPublicKey, KeyType.k1).toString()
   }
 }
