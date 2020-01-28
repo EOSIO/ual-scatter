@@ -1,10 +1,9 @@
-import { Api, JsonRpc, Numeric } from 'eosjs'
+import { Api, JsonRpc } from 'eosjs'
 import { ec as EC } from 'elliptic'
-import { Signature, PublicKey } from 'eosjs/dist/eosjs-jssig'
+import { Signature } from 'eosjs/dist/eosjs-jssig'
 import { Chain, SignTransactionResponse, UALErrorType, User } from 'universal-authenticator-library'
 import { UALScatterError } from './UALScatterError'
 
-const { KeyType } = Numeric
 const ec = new EC('secp256k1')
 
 export class ScatterUser extends User {
@@ -123,16 +122,9 @@ export class ScatterUser extends User {
   }
 
   private getPublicKey(challenge: string, signature: string): string {
-    const ellipticSignature = Signature.fromString(signature).toElliptic()
-    const ellipticHashedStringAsBuffer = Buffer.from(ec.hash().update(challenge).digest(), 'hex')
-    const ellipticRecoveredPublicKey =
-      ec.recoverPubKey(
-        ellipticHashedStringAsBuffer,
-        ellipticSignature,
-        ellipticSignature.recoveryParam,
-        'hex'
-      )
-    const ellipticPublicKey = ec.keyFromPublic(ellipticRecoveredPublicKey)
-    return PublicKey.fromElliptic(ellipticPublicKey, KeyType.k1).toString()
+    const sig = Signature.fromString(signature)
+    const digest = ec.hash().update(challenge).digest()
+    const publicKey = sig.recoverPublicKey(digest)
+    return publicKey.toString()
   }
 }
