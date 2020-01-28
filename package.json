@@ -27,9 +27,6 @@
     "eosjs": "^21.0.0-131a987.0",
     "universal-authenticator-library": "0.1.4"
   },
-  "resolutions": {
-    "cache-base": "4.0.0"
-  },
   "jest": {
     "verbose": false,
     "moduleFileExtensions": [
