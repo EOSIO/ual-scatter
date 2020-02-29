@@ -25,7 +25,7 @@
     "@scatterjs/eosjs2": "1.5.33",
     "elliptic": "6.5.2",
     "eosjs": "21.0.1-rc1",
-    "universal-authenticator-library": "0.1.4"
+    "universal-authenticator-library": "0.2.0"
   },
   "resolutions": {
     "cache-base": "4.0.0"
