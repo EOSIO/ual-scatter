@@ -17,7 +17,7 @@
     "build": "tsc --build tsconfig.json",
     "clean-build": "rm -rf dist && yarn build",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "prepublish": "yarn clean-build",
+    "prepare": "yarn clean-build",
     "test": "jest"
   },
   "dependencies": {
@@ -54,13 +54,13 @@
   "devDependencies": {
     "@babel/runtime": "^7.2.0",
     "@blockone/tslint-config-blockone": "^3.0.0",
-    "@types/elliptic": "^6.4.10",
-    "@types/jest": "^24.0.15",
-    "@types/node": "^12.12.20",
-    "jest": "^24.9.0",
-    "ts-jest": "^24.0.2",
+    "@types/elliptic": "^6.4.12",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.0",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.2.2"
+    "typescript": "^3.8.3"
   },
   "repository": {
     "type": "git",
