@@ -14,10 +14,9 @@
     "Jeffrey Smith II"
   ],
   "scripts": {
-    "build": "tsc --build tsconfig.json",
-    "clean-build": "rm -rf dist && yarn build",
+    "build": "rm -rf dist && tsc --build tsconfig.json",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "prepare": "yarn clean-build",
+    "prepare": "yarn build",
     "test": "jest"
   },
   "dependencies": {
@@ -26,9 +25,6 @@
     "elliptic": "6.5.2",
     "eosjs": "21.0.1-rc1",
     "universal-authenticator-library": "0.2.0"
-  },
-  "resolutions": {
-    "cache-base": "4.0.0"
   },
   "jest": {
     "verbose": false,
