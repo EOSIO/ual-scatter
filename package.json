@@ -1,6 +1,6 @@
 {
   "name": "ual-scatter",
-  "version": "0.2.0",
+  "version": "0.1.8",
   "main": "dist/index.js",
   "license": "MIT",
   "author": {
@@ -16,7 +16,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "clean-build": "rm -rf dist && yarn build",
-    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "prepublish": "yarn clean-build",
     "test": "jest"
   },
@@ -25,7 +25,7 @@
     "@scatterjs/eosjs2": "1.5.33",
     "elliptic": "6.5.2",
     "eosjs": "21.0.1-rc1",
-    "universal-authenticator-library": "0.2.0"
+    "universal-authenticator-library": "0.1.4"
   },
   "resolutions": {
     "cache-base": "4.0.0"
@@ -52,15 +52,15 @@
     "testEnvironment": "jsdom"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.2.0",
-    "@blockone/tslint-config-blockone": "^3.0.0",
-    "@types/elliptic": "^6.4.10",
-    "@types/jest": "^24.0.15",
-    "@types/node": "^12.12.20",
-    "jest": "^24.9.0",
-    "ts-jest": "^24.0.2",
-    "tslint": "^5.11.0",
-    "typescript": "^3.2.2"
+    "@babel/runtime": "7.2.0",
+    "@blockone/eslint-config-blockone": "3.0.0",
+    "@types/elliptic": "6.4.10",
+    "@types/jest": "24.0.15",
+    "@types/node": "12.12.20",
+    "eslint": "6.8.0",
+    "jest": "24.9.0",
+    "ts-jest": "24.0.2",
+    "typescript": "3.2.2"
   },
   "repository": {
     "type": "git",
