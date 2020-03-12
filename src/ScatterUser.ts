@@ -15,8 +15,8 @@ export class ScatterUser extends User {
   private accountName: string = ''
 
   constructor(
-      private chain: Chain,
-      private scatter: any,
+    private chain: Chain,
+    private scatter: any,
   ) {
     super()
     const rpcEndpoint = this.chain.rpcEndpoints[0]
@@ -34,21 +34,21 @@ export class ScatterUser extends User {
   }
 
   public async signTransaction(
-      transaction: any,
-      { broadcast = true, blocksBehind = 3, expireSeconds = 30 }
+    transaction: any,
+    { broadcast = true, blocksBehind = 3, expireSeconds = 30 }
   ): Promise<SignTransactionResponse> {
     try {
       const completedTransaction = await this.api.transact(
-          transaction,
-          { broadcast, blocksBehind, expireSeconds }
+        transaction,
+        { broadcast, blocksBehind, expireSeconds }
       )
 
       return this.returnEosjsTransaction(broadcast, completedTransaction)
     } catch (e) {
       throw new UALScatterError(
-          'Unable to sign the given transaction',
-          UALErrorType.Signing,
-          e)
+        'Unable to sign the given transaction',
+        UALErrorType.Signing,
+        e)
     }
   }
 
@@ -102,9 +102,9 @@ export class ScatterUser extends User {
       this.accountName = identity.accounts[0].name
     } catch (e) {
       throw new UALScatterError(
-          'Unable load user\'s identity',
-          UALErrorType.DataRequest,
-          e)
+        'Unable load user\'s identity',
+        UALErrorType.DataRequest,
+        e)
     }
   }
 
