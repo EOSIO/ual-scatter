@@ -9,7 +9,7 @@ import { scatterLogo } from './scatterLogo'
 import { ScatterUser } from './ScatterUser'
 import { UALScatterError } from './UALScatterError'
 
-declare var window: any
+declare let window: any
 
 export class Scatter extends Authenticator {
   private users: ScatterUser[] = []
@@ -63,7 +63,7 @@ export class Scatter extends Authenticator {
 
   public reset(): void {
     this.initError = null
-    // tslint:disable-next-line:no-floating-promises
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.init()
   }
 
@@ -157,5 +157,9 @@ export class Scatter extends Authenticator {
 
   public requiresGetKeyConfirmation(): boolean {
     return false
+  }
+
+  public getName(): string {
+    return Name
   }
 }
