@@ -1,6 +1,6 @@
 {
   "name": "ual-scatter",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/index.js",
   "license": "MIT",
   "author": {
@@ -24,7 +24,7 @@
     "@scatterjs/eosjs2": "1.5.33",
     "elliptic": "6.5.2",
     "eosjs": "21.0.1-rc1",
-    "universal-authenticator-library": "0.2.0"
+    "universal-authenticator-library": "0.3.0"
   },
   "jest": {
     "verbose": false,

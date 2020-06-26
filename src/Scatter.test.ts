@@ -227,4 +227,11 @@ describe('Scatter', () => {
       expect(scatterAuth.getError()).toBe(null)
     })
   })
+
+  describe('get authenticator name', () => {
+    it('should be able to get authenticator name', () => {
+      const scatterAuth = new Scatter(chains, { appName: 'testdapp' })
+      expect(scatterAuth.getName()).toBe(Name)
+    })
+  })
 })
