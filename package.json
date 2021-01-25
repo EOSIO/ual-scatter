@@ -1,5 +1,5 @@
 {
-  "name": "ual-scatter",
+  "name": "@everipedia/ual-scatter",
   "version": "0.3.0",
   "main": "dist/index.js",
   "license": "MIT",
